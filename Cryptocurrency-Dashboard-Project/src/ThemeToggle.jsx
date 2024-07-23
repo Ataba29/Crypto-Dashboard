@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
+// src/ThemeToggle.js
+import React, { useContext } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { ThemeContext } from "./ThemeContext";
 
 const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDarkMode);
-    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-    console.log(
-      "Dark mode class applied:",
-      document.documentElement.classList.contains("dark")
-    ); // Debugging line
-  }, [isDarkMode]);
+  const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
 
   return (
     <button

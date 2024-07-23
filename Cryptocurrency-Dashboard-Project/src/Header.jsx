@@ -24,41 +24,52 @@ export const Header = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-neutral-900 via-zinc-900 to-zinc-950 text-white p-4 flex justify-between items-center relative">
-      {/* Logo */}
-      <div className="text-lg font-bold">
-        <Link to="/">
-          <img src={logo} alt="Logo" className="w-12 h-12" />
-        </Link>
-      </div>
-      {/* Desktop navigation menu */}
-      <div className="hidden sm:flex gap-4">
-        {tabs.map((tab) => (
-          <Link
-            key={tab.name}
-            to={tab.path}
-            className="text-white hover:text-gray-400 transition"
-          >
-            {tab.name}
+    <div className="bg-gradient-to-br from-neutral-900 via-zinc-900 to-zinc-950 text-white p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo and Desktop Navigation */}
+        <div className="flex items-center space-x-6">
+          {/* Logo */}
+          <Link to="/" className="text-lg font-bold">
+            <img src={logo} alt="Logo" className="w-12 h-12" />
           </Link>
-        ))}
+
+          {/* Desktop navigation menu */}
+          <div className="hidden md:flex space-x-4">
+            {tabs.map((tab) => (
+              <Link
+                key={tab.name}
+                to={tab.path}
+                className="text-white hover:text-gray-400 transition px-3 py-2 rounded-md hover:bg-gray-700"
+              >
+                {tab.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          {/* Theme Toggle */}
+          <ThemeToggle />
+
+          {/* Toggle button for mobile menu */}
+          <button className="md:hidden" onClick={toggleMenu}>
+            {!isMenuOpen ? (
+              <img src={menuOpenIcon} alt="Menu Open" className="w-9" />
+            ) : (
+              <img src={menuClosedIcon} alt="Menu Closed" className="w-9" />
+            )}
+          </button>
+        </div>
       </div>
-      {/* Toggle button for mobile menu */}
-      <button className="sm:hidden" onClick={toggleMenu}>
-        {!isMenuOpen ? (
-          <img src={menuOpenIcon} alt="Menu Open" className="w-9" />
-        ) : (
-          <img src={menuClosedIcon} alt="Menu Closed" className="w-9" />
-        )}
-      </button>
+
       {/* Mobile navigation menu */}
       {isMenuOpen && (
-        <div className="absolute top-16 left-0 bg-gradient-to-r from-purple-300 p-3 w-full z-20">
+        <div className="md:hidden mt-4 bg-gray-800 rounded-md overflow-hidden">
           {tabs.map((tab) => (
             <Link
               key={tab.name}
               to={tab.path}
-              className="block p-4 text-white hover:text-gray-800 transition"
+              className="block px-4 py-2 text-white hover:bg-gray-700 transition"
               onClick={() => setIsMenuOpen(false)}
             >
               {tab.name}
@@ -66,8 +77,6 @@ export const Header = () => {
           ))}
         </div>
       )}
-      {/* Theme Toggle */}
-      <ThemeToggle />
     </div>
   );
 };
