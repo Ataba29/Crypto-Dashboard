@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import News from "./pages/News";
 import AboutUs from "./pages/AboutUs";
+import FAQ from "./pages/FAQ";
 import "./index.css";
 import "./animations.css";
 
@@ -43,6 +44,7 @@ function App() {
               <Route path="/Dashboard" element={<Dashboard />} />
               <Route path="/News" element={<News />} />
               <Route path="/AboutUs" element={<AboutUs />} />
+              <Route path="/FAQ" element={<FAQ />} />
             </Routes>
           </div>
         </div>

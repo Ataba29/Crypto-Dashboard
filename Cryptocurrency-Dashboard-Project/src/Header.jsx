@@ -12,6 +12,7 @@ const tabs = [
   { name: "Dashboard", path: "/Dashboard" },
   { name: "News", path: "/News" },
   { name: "About Us", path: "/AboutUs" },
+  { name: "FAQ", path: "/FAQ" },
 ];
 
 export const Header = () => {
