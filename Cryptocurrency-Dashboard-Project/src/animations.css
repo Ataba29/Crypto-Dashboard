@@ -1,3 +1,13 @@
+/**
+ * Animations for the Cryptocurrency Dashboard
+ * 
+ * @author Michael Kilsdonk
+ * @date 2023-02-10
+ */
+
+/**
+ * A slow rotation animation (20s)
+ */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -7,6 +17,9 @@
   }
 }
 
+/**
+ * A fade-in animation from the bottom (1s)
+ */
 @keyframes fade-in-down {
   0% {
     opacity: 0;
@@ -18,6 +31,9 @@
   }
 }
 
+/**
+ * A fade-in animation (1.5s)
+ */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -27,6 +43,9 @@
   }
 }
 
+/**
+ * A fade-in animation from the top (1s)
+ */
 @keyframes fade-in-up {
   0% {
     opacity: 0;
@@ -38,62 +57,86 @@
   }
 }
 
+/**
+ * Applies the slow rotation animation to an element
+ */
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
 
+/**
+ * Applies the fade-in from the bottom animation to an element
+ */
 .animate-fade-in-down {
   animation: fade-in-down 1s ease-out;
 }
 
+/**
+ * Applies the fade-in animation to an element
+ */
 .animate-fade-in {
   animation: fade-in 1.5s ease-out;
 }
 
+/**
+ * Applies the fade-in from the top animation to an element
+ */
 .animate-fade-in-up {
   animation: fade-in-up 1s ease-out;
 }
 
+/**
+ * Changes the border color of an element in a loop (blue-500 -> purple-500 -> pink-500 -> yellow-500 -> blue-500) (8s)
+ */
 @keyframes border-color-change {
   0% {
-    border-color: #3b82f6;
-  } /* blue-500 */
+    border-color: #3b82f6; /* blue-500 */
+  }
   25% {
-    border-color: #8b5cf6;
-  } /* purple-500 */
+    border-color: #8b5cf6; /* purple-500 */
+  }
   50% {
-    border-color: #ec4899;
-  } /* pink-500 */
+    border-color: #ec4899; /* pink-500 */
+  }
   75% {
-    border-color: #f59e0b;
-  } /* yellow-500 */
+    border-color: #f59e0b; /* yellow-500 */
+  }
   100% {
-    border-color: #3b82f6;
-  } /* back to blue-500 */
+    border-color: #3b82f6; /* back to blue-500 */
+  }
 }
 
+/**
+ * Changes the text color of an element in a loop (blue-500 -> purple-500 -> pink-500 -> yellow-500 -> blue-500) (8s)
+ */
 @keyframes text-color-change {
   0% {
-    color: #3b82f6;
-  } /* blue-500 */
+    color: #3b82f6; /* blue-500 */
+  }
   25% {
-    color: #8b5cf6;
-  } /* purple-500 */
+    color: #8b5cf6; /* purple-500 */
+  }
   50% {
-    color: #ec4899;
-  } /* pink-500 */
+    color: #ec4899; /* pink-500 */
+  }
   75% {
-    color: #f59e0b;
-  } /* yellow-500 */
+    color: #f59e0b; /* yellow-500 */
+  }
   100% {
-    color: #3b82f6;
-  } /* back to blue-500 */
+    color: #3b82f6; /* back to blue-500 */
+  }
 }
 
+/**
+ * Applies the border color animation to an element
+ */
 .animate-border-color {
   animation: border-color-change 8s linear infinite;
 }
 
+/**
+ * Applies the text color animation to an element
+ */
 .animate-text-color {
   animation: text-color-change 8s linear infinite;
 }

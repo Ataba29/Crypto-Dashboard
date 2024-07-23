@@ -10,6 +10,28 @@ import "./index.css";
 import "./animations.css";
 
 function App() {
+  /**
+   * App is the root component of the application.
+   *
+   * It wraps the Router from react-router-dom with a ThemeProvider from ThemeContext.
+   * This ensures that all child components have access to the theme state.
+   *
+   * It also applies some styles to the root div to ensure the app takes up the full height of the viewport.
+   *
+   * The Header component is rendered first, followed by the content of the app.
+   * The content is wrapped in a div with flex-grow so that it takes up the full remaining space.
+   *
+   * The Routes component from react-router-dom is used to render the appropriate component based on the URL.
+   */
+
+  /**
+   * Routes:
+   *   - "/" renders the Home component
+   *   - "/Dashboard" renders the Dashboard component
+   *   - "/News" renders the News component
+   *   - "/AboutUs" renders the AboutUs component
+   */
+
   return (
     <ThemeProvider>
       <Router>

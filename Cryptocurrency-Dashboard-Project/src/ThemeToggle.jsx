@@ -4,8 +4,10 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { ThemeContext } from "./ThemeContext";
 
 const ThemeToggle = () => {
+  // define isDarkMode and setIsDarkMode from ThemeContext
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
 
+  // return a button with the correct icon based on isDarkMode (sun or moon)
   return (
     <button
       onClick={() => setIsDarkMode(!isDarkMode)}
