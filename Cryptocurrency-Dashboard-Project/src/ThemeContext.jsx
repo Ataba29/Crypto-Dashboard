@@ -3,18 +3,28 @@ import React, { createContext, useState, useEffect } from "react";
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  // defines isDarkMode and setIsDarkMode based on the localStorage value
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
+  // Function to determine the initial theme
+  const getInitialTheme = () => {
+    // Check if theme is stored in localStorage
+    if (localStorage.getItem("theme")) {
+      return localStorage.getItem("theme") === "dark";
+    }
+    // Check system preference for dark mode
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  };
 
-  // sets the theme based on the localStorage value
+  // State to manage the theme
+  const [isDarkMode, setIsDarkMode] = useState(getInitialTheme);
+
+  // Effect to apply theme and update localStorage
   useEffect(() => {
+    // Toggle 'dark' class on <html> element
     document.documentElement.classList.toggle("dark", isDarkMode);
+    // Store current theme in localStorage
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   }, [isDarkMode]);
 
-  // returns the ThemeContext.Provider with the isDarkMode and setIsDarkMode values
+  // Provide the theme state and updater function to children components
   return (
     <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
       {children}
