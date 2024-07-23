@@ -19,7 +19,11 @@ function Home() {
     >
       {/* Logo and animation */}
       <div className="mb-8">
-        <img src={logo} alt="Logo" className="w-100 h-100 animate-spin-slow" />
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-[30vw] sm:w-[25vw] md:w-[20vw] lg:w-[15vw] xl:w-[12vw] max-w-[500px] min-w-[200px] h-auto animate-spin-slow"
+        />
       </div>
 
       {/* Welcome message */}
