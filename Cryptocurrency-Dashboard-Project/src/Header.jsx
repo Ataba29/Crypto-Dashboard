@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
 // Import images
-import menuOpenIcon from "./assets/menuopen.png";
-import menuClosedIcon from "./assets/menuclosed.png";
-import logo from "./assets/Logo.png";
+import menuOpenIcon from "../public/menuopen.png";
+import menuClosedIcon from "../public/menuclosed.png";
+import logo from "../public/Logo.png";
 
 // Define navigation tabs with their names and path for routing
 const tabs = [

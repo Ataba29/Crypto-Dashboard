@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../ThemeContext";
-import logo from "../assets/Logo.png";
+import logo from "../../public/Logo.png";
 
 function Home() {
   const { isDarkMode } = useContext(ThemeContext);
