@@ -1,5 +1,6 @@
 import React from "react";
 
+// function that generates the about us page
 function AboutUs() {
   return (
     <div className="p-4">
