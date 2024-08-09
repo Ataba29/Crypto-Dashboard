@@ -25,8 +25,8 @@ export const Header = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-neutral-900 via-zinc-900 to-zinc-950 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <header className="bg-gradient-to-br from-neutral-900 via-zinc-900 to-zinc-950 text-white sticky top-0 z-20">
+      <div className="container mx-auto flex justify-between items-center py-4">
         {/* Logo and Desktop Navigation */}
         <div className="flex items-center space-x-6">
           {/* Logo */}
@@ -78,7 +78,7 @@ export const Header = () => {
           ))}
         </div>
       )}
-    </div>
+    </header>
   );
 };
 

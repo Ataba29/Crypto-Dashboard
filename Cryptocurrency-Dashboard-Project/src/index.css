@@ -1,3 +1,138 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.faq-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.faq-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.faq-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.faq-title {
+  transition: color 0.3s ease-in-out;
+}
+
+.faq-title:hover {
+  color: #4c51bf;
+}
+
+.faq-answer {
+  transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+@keyframes textMoveHorizontal {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(5%);
+  }
+}
+
+@keyframes answerSlideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.faq-answer.open {
+  animation: answerSlideIn 0.7s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes colorChange {
+  0%,
+  100% {
+    color: #667eea;
+  }
+  16% {
+    color: #4c51bf;
+  }
+  32% {
+    color: #f56565;
+  }
+  48% {
+    color: #48bb78;
+  }
+  64% {
+    color: #ecc94b;
+  }
+  80% {
+    color: #ed64a6;
+  }
+}
+
+.animate-text-horizontal {
+  animation: textMoveHorizontal 10s infinite;
+}
+
+.animate-color-change {
+  animation: colorChange 6s infinite;
+}
+
+.animate-answer-mobile {
+  animation: answerSlideIn 0.5s ease-in-out forwards;
+}
+
+.main-title {
+  font-size: 8rem; /* שינוי גודל הפונט עבור הכותרת הראשית */
+}
+
+.mobile-title {
+  display: none; /* התחלה עם הכותרת מוסתרת */
+}
+
+@media (max-width: 768px) {
+  .animate-text-horizontal {
+    display: none;
+  }
+
+  .faq-answer {
+    max-height: none;
+    opacity: 1;
+    display: none;
+  }
+
+  .faq-answer.open {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .mobile-title {
+    display: block; /* הצגת הכותרת במסכים קטנים */
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #667eea;
+  }
+}
