@@ -1,5 +1,21 @@
 # Cryptocurrency Dashboard Project
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Live Demo](#live-demo)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Screenshots](#screenshots)
+  - [Home](#home)
+  - [Dashboard](#dashboard)
+  - [News](#news)
+  - [About Us](#about-us)
+  - [FAQ](#faq)
+- [Team](#team)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Overview
 
 This project is a Cryptocurrency Dashboard built with React and Tailwind CSS. It provides historical data for the past year using MTW API, live updates, and news from the CoinGecko API. The website also includes an About Us page and a simple FAQ section.
