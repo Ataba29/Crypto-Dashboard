@@ -2,137 +2,159 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Apply the Inter font to the entire body */
 body {
   font-family: "Inter", sans-serif;
 }
 
+/* Container styling for FAQ section with a gradient background */
 .faq-container {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+/* Style for FAQ items with smooth transition effects */
 .faq-item {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
 }
 
+/* Change background color on hover for FAQ items */
 .faq-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly darkens background */
 }
 
+/* Style for FAQ titles with smooth color transition */
 .faq-title {
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
 }
 
+/* Change color on hover for FAQ titles */
 .faq-title:hover {
-  color: #4c51bf;
+  color: #4c51bf; /* Color change on hover */
 }
 
+/* Style for FAQ answers with smooth transitions for height and opacity */
 .faq-answer {
-  transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Smooth transitions for height and opacity */
 }
 
+/* Keyframes for horizontal text movement animation */
 @keyframes textMoveHorizontal {
   0%,
   100% {
-    transform: translateX(0);
+    transform: translateX(0); /* Start and end at original position */
   }
   25% {
-    transform: translateX(-5%);
+    transform: translateX(-5%); /* Move left slightly */
   }
   50% {
-    transform: translateX(0);
+    transform: translateX(0); /* Return to original position */
   }
   75% {
-    transform: translateX(5%);
+    transform: translateX(5%); /* Move right slightly */
   }
 }
 
+/* Keyframes for sliding animation of FAQ answers */
 @keyframes answerSlideIn {
   from {
-    transform: translateY(-100%);
-    opacity: 0;
+    transform: translateY(-100%); /* Start off-screen above */
+    opacity: 0; /* Start invisible */
   }
   to {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(0); /* Slide into place */
+    opacity: 1; /* Fade in to fully visible */
   }
 }
 
+/* Apply sliding animation when FAQ answer is open */
 .faq-answer.open {
-  animation: answerSlideIn 0.7s ease-in-out forwards;
+  animation: answerSlideIn 0.7s ease-in-out forwards; /* Animation duration and easing */
 }
 
+/* Keyframes for fade-in animation */
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    opacity: 0; /* Start invisible */
   }
   to {
-    opacity: 1;
+    opacity: 1; /* Fade in to fully visible */
   }
 }
 
+/* Keyframes for color change animation */
 @keyframes colorChange {
   0%,
   100% {
-    color: #667eea;
+    color: #667eea; /* Start and end color */
   }
   16% {
-    color: #4c51bf;
+    color: #4c51bf; /* Intermediate color */
   }
   32% {
-    color: #f56565;
+    color: #f56565; /* Intermediate color */
   }
   48% {
-    color: #48bb78;
+    color: #48bb78; /* Intermediate color */
   }
   64% {
-    color: #ecc94b;
+    color: #ecc94b; /* Intermediate color */
   }
   80% {
-    color: #ed64a6;
+    color: #ed64a6; /* Intermediate color */
   }
 }
 
+/* Apply horizontal text movement animation */
 .animate-text-horizontal {
-  animation: textMoveHorizontal 10s infinite;
+  animation: textMoveHorizontal 10s infinite; /* Animation duration and infinite loop */
 }
 
+/* Apply color change animation */
 .animate-color-change {
-  animation: colorChange 6s infinite;
+  animation: colorChange 6s infinite; /* Animation duration and infinite loop */
 }
 
+/* Apply sliding animation for mobile view */
 .animate-answer-mobile {
-  animation: answerSlideIn 0.5s ease-in-out forwards;
+  animation: answerSlideIn 0.5s ease-in-out forwards; /* Faster animation for mobile */
 }
 
+/* Main title styling */
 .main-title {
-  font-size: 8rem; /* שינוי גודל הפונט עבור הכותרת הראשית */
+  font-size: 8rem; /* Set font size for main title */
 }
 
+/* Hide mobile title by default */
 .mobile-title {
-  display: none; /* התחלה עם הכותרת מוסתרת */
+  display: none; /* Hide the title initially */
 }
 
+/* Styles for mobile view */
 @media (max-width: 768px) {
+  /* Hide horizontal text movement animation on mobile */
   .animate-text-horizontal {
     display: none;
   }
 
+  /* Style FAQ answers for mobile */
   .faq-answer {
-    max-height: none;
-    opacity: 1;
-    display: none;
+    max-height: none; /* Remove max-height restriction */
+    opacity: 1; /* Ensure visibility */
+    display: none; /* Hide answers initially */
   }
 
+  /* Show FAQ answers when open on mobile */
   .faq-answer.open {
-    display: block;
-    animation: fadeIn 0.5s ease-in-out;
+    display: block; /* Show answer */
+    animation: fadeIn 0.5s ease-in-out; /* Apply fade-in animation */
   }
 
+  /* Show mobile title and style it */
   .mobile-title {
-    display: block; /* הצגת הכותרת במסכים קטנים */
-    font-size: 4rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #667eea;
+    display: block; /* Show the title on mobile */
+    font-size: 4rem; /* Set font size for mobile title */
+    text-align: center; /* Center align the title */
+    margin-bottom: 20px; /* Add bottom margin */
+    color: #667eea; /* Set color */
   }
 }
