@@ -75,7 +75,7 @@ Connect with our team members on LinkedIn:
 - [Ahmad Ataba](https://www.linkedin.com/in/ahmadataba/)
 - [Mnsor Khalel](https://www.linkedin.com/in/mnsor-khalel-128535273/)
 - [Basel Haddad](https://www.linkedin.com/in/basel-haddad-b49924315/)
-- [Ibraheem Jramnh](https://www.linkedin.com/in/ibraheem-jr-b9ba86278/)
+- [Ibraheem Jramnh](https://www.linkedin.com/in/ibraheem-jramnh-b9ba86278/)
 
 ## Contributing
 
